@@ -1,0 +1,35 @@
+/*
+font-family: 'Inter', sans-serif;
+font-family: 'Roboto Slab', serif;
+*/
+
+@import './config';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+}
+
+body {
+    background-color: #282c34;
+    min-height: 100vh;
+    color: $clr-white;
+
+    svg {
+        pointer-events: none;
+        @include FullSize;
+    }
+
+    span.home-icon {
+        position: fixed;
+        left: 6px;
+        top: 6px;
+        @include Rectangle(25px);
+        cursor: pointer;
+        z-index: 9;
+    }
+}
