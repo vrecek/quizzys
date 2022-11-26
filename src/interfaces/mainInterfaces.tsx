@@ -1,7 +1,14 @@
+export type GameType = 'solo' | 'multi'
+
 export type LobbyOptionsType = {
-    type: 'solo'
+    type: GameType
 }
 
 export type SelectCategoriesType = {
-    type: 'solo'
+    type: GameType
+}
+
+export interface InputContainerType {
+    type: 'text' | 'number'
+    label: string
 }

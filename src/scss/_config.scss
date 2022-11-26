@@ -110,6 +110,9 @@ $clr-red: rgb(199, 11, 11);
 
 // # # # # # # # # # # # # # # # # LOCAL PROJECT MIXINS # # # # # # # # # # # # # # # # #
 
-
+@mixin Fullscreen {
+   width: 100vw;
+   height: 100vh;
+}
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -1,8 +1,7 @@
 @import '../config';
 
 main.main-menu {
-    width: 100vw;
-    height: 100vh;
+    @include Fullscreen;
     @include Flex(c, c, c);
     padding: 2em;   
 
