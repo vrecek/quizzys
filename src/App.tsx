@@ -3,8 +3,9 @@ import './css/index.css'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import MENU from './components/MENU/MENU';
 import HomeIcon from './components/HomeIcon';
-import LobbyOptions from './components/Game/LobbyOptions/LobbyOptions';
-import SelectCategories from './components/Game/SelectCategories/SelectCategories';
+import SelectCategoriesSolo from './components/Game/SelectCategories/Solo/SelectCategoriesSolo';
+import GameSolo from './components/Game/GamePage/Solo/GameSolo';
+import LobbyOptionsSolo from './components/Game/LobbyOptions/Solo/LobbyOptionsSolo';
 
 function App() {
     return (
@@ -18,8 +19,9 @@ function App() {
 
                     <Route path='/solo'>
 
-                        <Route path='' element={<LobbyOptions type='solo' />} />
-                        <Route path='categories' element={<SelectCategories type='solo' />} />
+                        <Route path='' element={<LobbyOptionsSolo />} />
+                        <Route path='categories' element={<SelectCategoriesSolo />} />
+                        <Route path='game' element={<GameSolo />} />
 
                     </Route>
 

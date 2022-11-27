@@ -1,0 +1,83 @@
+@import '../config';
+
+main.select-categories {
+    @include Flex(none, c, c);
+    padding: 2em;
+
+    div.wrap {
+        width: 100%;
+
+        h1 {
+            font-size: 2.5rem;
+            opacity: .25;
+            font-weight: 800;
+            color: $clr-grey;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        section.category-select {
+            @include Flex(sb);
+            align-items: stretch;
+            flex-wrap: wrap;
+
+            article.category {
+                @include SetWidth(225, 18%, 400);
+                flex-wrap: nowrap;
+                margin: 0 .5em;
+                padding: 1.5em 1em;
+                margin-bottom: 1em;
+                background: rgba(109, 160, 255, .4);
+                border-radius: .2em;
+                @include Flex(none, c, c);
+                cursor: pointer;
+                border: 2px solid transparent;
+
+                p {
+                    text-align: center;
+                    pointer-events: none;
+
+                    &.name {
+                        font-weight: 700;
+                        font-family: 'Roboto Slab', serif;
+                        margin: .25em 0 1em 0;
+                    }
+
+                    &.total {
+                        font-size: .8rem;
+                        color: $clr-bluel;
+                        font-weight: 500;
+                    }
+                }
+
+                span {
+                    pointer-events: none;
+                    @include Rectangle(3rem);
+                }
+
+                &.active {
+                    pointer-events: none;
+                    border-color: greenyellow;
+                }
+            }
+        }
+
+        button {
+            padding: .75em 2em;
+            border: 0;
+            outline: 0;
+            background: $clr-blued;
+            transition: .3s;
+            margin-top: 2em;
+            margin-left: .5em;
+            cursor: pointer;
+            border-radius: .25em;
+
+            label {
+                color: $clr-white;
+            }
+
+            &:hover { background: royalblue; }
+        }
+    }
+}
