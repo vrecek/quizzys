@@ -6,34 +6,37 @@ import { NavigateFunction, useNavigate } from 'react-router-dom'
 import Client, { Aliases as al } from '../../../../functions/Client'
 
 const LobbyOptionsSolo = () => {
-    const n: NavigateFunction = useNavigate()
+    const n: NavigateFunction = useNavigate(),
+          ROUNDS_LIMIT: number = 10,
+          QUESTION_LIMIT: number = 10
+
 
     const submitHandle = (e: React.FormEvent): void => {
         e.preventDefault()
 
         const form: al.Form = e.target as al.Form,
               elements: al.Input[] = Array.from(form.elements as al.Inputs),
-              [rounds, questionsPerRound] = elements.map(x => parseInt(x.value)),
-              box = new Client.TextBox({
-                  message: 'Please fill all fields',
-                  cname: 'error-lobby'
-              })
+              [rounds, questionsPerRound] = elements.map(x => parseInt(x.value))
+
+
+        const box = new Client.TextBox({
+            message: 'Please fill all fields',
+            cname: 'error-lobby'
+        }).initializeBox().removePreviousBox(document.body)
 
 
         if(!rounds || !questionsPerRound) {
-            box.initializeBox()
-               .removePreviousBox(document.body)
-               .appendTo(document.body, 2500)
+            box.appendTo(document.body, 2500)
 
-            
             return
         }
 
-        
-        if(box.isAppended(document.body))
-            box.removePreviousBox(document.body)
+        if(rounds > ROUNDS_LIMIT || questionsPerRound > QUESTION_LIMIT) {
+            box.setMessage = 'Select correct options'
+            box.appendTo(document.body, 2500)
 
-
+            return
+        }
 
         n('/solo/categories', {
             state: {
@@ -51,8 +54,8 @@ const LobbyOptionsSolo = () => {
 
                 <h1>Start game</h1>
 
-                <InputContainer type='number' label='Rounds limit (max 99)' />
-                <InputContainer type='number' label='Questions per round (max 99)' />
+                <InputContainer type='number' label={`Rounds limit (max ${ROUNDS_LIMIT})`} />
+                <InputContainer type='number' label={`Questions per round (max ${QUESTION_LIMIT})`} />
 
                 <Button text='Start game' />
 

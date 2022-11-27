@@ -33,7 +33,9 @@ const SelectCategoriesSolo = () => {
 
         n('/solo/game', {
             state: {
-                category
+                category,
+                rounds: stateOptions.rounds,
+                questionsPerRound: stateOptions.questionsPerRound
             }
         })
     } 

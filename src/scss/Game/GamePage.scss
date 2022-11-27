@@ -1,0 +1,77 @@
+@import '../config';
+
+main.game-page {
+    min-height: 100vh;
+
+    section.loading-indicator {
+        position: relative;
+        z-index: 99;
+        background: #282c34;
+
+        div.fullheight {
+            @include Fullscreen;
+            @include Flex(sa, c, c);
+
+            section.category-info {
+                span {
+                    @include Rectangle(20vw);
+                    max-width: 550px;
+                    min-height: 300px;
+                    min-width: 250px;
+                }
+    
+                h1 {
+                    font-size: 2.5rem;
+                    text-align: center;
+                    font-weight: 800;
+                }
+            }
+    
+            ul.game-info {
+                background: rgb(22, 31, 43);
+                width: 25vw;
+                min-width: 300px;
+                list-style: none;
+                border-radius: .2em;
+
+                li {
+                    padding: 1em;
+                    @include Flex(sb, c);
+
+                    p {
+                        &.key { 
+                            font-weight: 800; 
+                            font-family: 'Roboto Slab', serif;
+                        }
+
+                        &.value {
+                            color: $clr-grey;
+                        }
+                    }
+                }
+            }
+        }
+
+        ul.scores {
+            width: 100vw;
+            list-style: none;
+            background: rgb(22, 31, 43);
+            position: relative;
+
+            &::before {
+                content: 'Scores ↓';
+                position: absolute;
+                left: 2px;
+                bottom: 100%;
+                font-weight: 700;
+                font-family: 'Roboto Slab', serif;
+
+            }
+
+            li {
+                padding: 1.25em;
+                @include Flex(sa, c);
+            }
+        }
+    }
+}

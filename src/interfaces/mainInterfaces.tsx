@@ -1,4 +1,5 @@
 import { Aliases } from "../functions/Client"
+import { PlayerScoreType, ReducerActionType } from "../functions/GameReducer"
 
 export type GameType = 'solo' | 'multi'
 
@@ -50,12 +51,36 @@ export type CategoryHook = {
 
 //////////
 
-export type GameLocation = {
+export type GameLocation = CategoriesSelectState & {
     category: string
 }
 
 export type LoadingIndicatorType = {
-    setLoad: React.Dispatch<React.SetStateAction<boolean>>
+    dispatch: React.Dispatch<ReducerActionType>
     categoryName: string
     categoryIcon: JSX.Element
+    round: number
+    question: number
+    qpr: number
+    totalRounds: number
+    players: PlayerScoreType[]
+}
+
+export type CategoryInfoType = {
+    name: string
+    icon: JSX.Element
+}
+
+export type GameInfoType = {
+    currentRound: number, 
+    currentQuestion: number, 
+    totalRounds: number, 
+    questionsPerRound: number
+}
+
+//////////
+
+export type ScoresType = {
+    players: PlayerScoreType[]
+    totalQuestions: number
 }
