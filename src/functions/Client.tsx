@@ -1,11 +1,18 @@
 // Aliases to export
 namespace Aliases {
     export type StrUN = string | undefined | null
+    export type Possible<T> = T | null | undefined
+
+    export type Text<T = string> = {
+        children: T
+    } 
 
     export type Form = HTMLFormElement
     export type Input = HTMLInputElement
+    export type Elem = HTMLElement
 
     export type Inputs = HTMLCollectionOf<Input>
+    export type Arr<T extends Element> = HTMLCollectionOf<T>
 }
 
 // TextBox types

@@ -1,17 +1,19 @@
 import React from 'react'
 import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom'
 import { returnOneCategory } from '../../../../data/Categories'
-import { CategoryInformations, GameLocation } from '../../../../interfaces/mainInterfaces'
+import { GameLocation } from '../../../../interfaces/mainInterfaces'
 import LoadingIndicator from '../LoadingIndicator/LoadingIndicator'
 import '../../../../css/GamePage.css'
-import GameReducer, { DefaultState, ReducerEnum } from '../../../../functions/GameReducer'
+import GameReducer, { DefaultState, ReducerEnum, ReducerStateType } from '../../../../functions/GameReducer'
+import GameSection from './GameSection'
+import GameClass, { ReducerType } from '../../../../functions/GameClass'
 
 const GameSolo = () => {
     const n: NavigateFunction = useNavigate(),
           categoryLoc = useLocation().state as GameLocation
 
 
-    const [state, dispatch] = React.useReducer(GameReducer, DefaultState)
+    const [state, dispatch]: [ReducerStateType, ReducerType] = React.useReducer(GameReducer, DefaultState)
 
 
 
@@ -21,14 +23,17 @@ const GameSolo = () => {
             return
         }
 
-        dispatch({ type: ReducerEnum.PLAYERS, players: [{name: 'You', points: 0}] })
+        dispatch({
+            type: ReducerEnum.GAME,
+            game: new GameClass(dispatch, {
+                category: returnOneCategory(categoryLoc.category),
+                players: [{name: "You", points: 0, id: '1'}],
+                totalQuestions: categoryLoc.questionsPerRound
+            })
+        })
     }, [])
-    if(!categoryLoc) return <></>
+    if(!categoryLoc || !state.game) return <></>
 
-
-
-    const {category, rounds, questionsPerRound} = categoryLoc,
-          categoryDetails: CategoryInformations = returnOneCategory(category)
 
 
     return (
@@ -38,16 +43,14 @@ const GameSolo = () => {
                 state.loading
                     ? <LoadingIndicator 
                            dispatch={dispatch} 
-                           categoryName={categoryDetails.name} 
-                           categoryIcon={categoryDetails.icon} 
-                           round={state.round}
-                           question={state.question}
-                           totalRounds={rounds}
-                           qpr={questionsPerRound}
-                           players={state.players}
+                           game={state.game}
                       />
 
-                    : <>game</>
+                    : <GameSection 
+                           state={state}
+                           dispatch={dispatch}
+                           game={state.game}
+                      />
             }
 
         </main>

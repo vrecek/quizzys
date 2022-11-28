@@ -6,6 +6,7 @@ import HomeIcon from './components/HomeIcon';
 import SelectCategoriesSolo from './components/Game/SelectCategories/Solo/SelectCategoriesSolo';
 import GameSolo from './components/Game/GamePage/Solo/GameSolo';
 import LobbyOptionsSolo from './components/Game/LobbyOptions/Solo/LobbyOptionsSolo';
+import Summary from './components/Game/Summary/Summary';
 
 function App() {
     return (
@@ -24,6 +25,8 @@ function App() {
                         <Route path='game' element={<GameSolo />} />
 
                     </Route>
+
+                    <Route path='/summary' element={<Summary />} />
 
                 </Routes>
 

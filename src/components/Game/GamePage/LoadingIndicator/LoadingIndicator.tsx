@@ -5,24 +5,26 @@ import CategoryInfo from './CategoryInfo'
 import GameInfo from './GameInfo'
 import Scores from './Scores'
 
-const LoadingIndicator = ({dispatch, categoryName, categoryIcon, round, question, totalRounds, qpr, players}: LoadingIndicatorType) => {
-    // setTimeout(
-    //     () => dispatch({ type: ReducerEnum.LOADING, value: 0 }), 
-    //     5000
-    // )
+const LoadingIndicator = ({dispatch, game}: LoadingIndicatorType) => {
+    setTimeout(
+        () => dispatch({ type: ReducerEnum.LOADING, value: 0 }), 
+        4000
+    )
+
+    const {icon, name} = game.getCategory
 
     return (
         <section className="loading-indicator">
 
             <div className="fullheight">
 
-                <CategoryInfo icon={categoryIcon} name={categoryName} />
+                <CategoryInfo icon={icon} name={name} />
 
-                <GameInfo questionsPerRound={qpr} currentQuestion={question} currentRound={round} totalRounds={totalRounds} />
+                <GameInfo totalQuestions={game.getQuestion('total')} currentQuestion={game.getQuestion('current')} />
 
             </div>
 
-            <Scores players={players} totalQuestions={qpr * totalRounds} />
+            <Scores players={game.getPlayers} totalQuestions={game.getQuestion('total')} />
 
         </section>
     )

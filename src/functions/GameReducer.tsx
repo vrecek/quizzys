@@ -1,23 +1,24 @@
+import GameClass from "./GameClass"
+
 export type ReducerStateType = {
     loading: boolean
-    round: number
-    question: number
-    players: PlayerScoreType[]
+    game: GameClass | null
 }
 export type ReducerActionType = {
     type: ReducerEnum
     value?: number
-    players?: PlayerScoreType[]
+    multiple?: any
+    game?: GameClass
 }
 export enum ReducerEnum {
-    ROUND = 'ROUND',
-    QUESTION = 'QUESTION',
     LOADING = 'LOADING',
-    PLAYERS = 'PLAYERS'
+    MULTIPLE = 'MULTIPLE',
+    GAME = 'GAME'
 }
 export type PlayerScoreType = {
     name: string
     points: number
+    id: string
 }
 
 
@@ -30,19 +31,14 @@ const GameReducer = (state: ReducerStateType, action: ReducerActionType) => {
             loading: !!val
         }
 
-        case ReducerEnum.QUESTION: return {
+        case ReducerEnum.MULTIPLE: return {
             ...state,
-            question: val
+            ...action.multiple
         }
 
-        case ReducerEnum.ROUND: return {
+        case ReducerEnum.GAME: return {
             ...state,
-            round: val
-        }
-
-        case ReducerEnum.PLAYERS: return {
-            ...state,
-            players: action.players ?? []
+            game: action.game
         }
 
         default: return state
@@ -52,9 +48,7 @@ const GameReducer = (state: ReducerStateType, action: ReducerActionType) => {
 
 const DefaultState: ReducerStateType = {
     loading: true,
-    round: 1,
-    question: 1,
-    players: []
+    game: null
 }
 
 

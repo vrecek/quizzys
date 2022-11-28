@@ -1,21 +1,14 @@
 import React from 'react'
 import { GameInfoType } from '../../../../interfaces/mainInterfaces'
 
-const GameInfo = ({currentRound, currentQuestion, totalRounds, questionsPerRound}: GameInfoType) => {
+const GameInfo = ({totalQuestions, currentQuestion}: GameInfoType) => {
     return (
         <ul className="game-info">
 
             <li>
 
-                <p className="key">Round</p>
-                <p className="value">{currentRound} / {totalRounds}</p>
-
-            </li>
-
-            <li>
-
                 <p className="key">Question</p>
-                <p className="value">{currentQuestion} / {totalRounds * questionsPerRound}</p>
+                <p className="value">{currentQuestion} / {totalQuestions}</p>
 
             </li>
 

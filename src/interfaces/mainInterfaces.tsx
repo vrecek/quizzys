@@ -1,5 +1,6 @@
 import { Aliases } from "../functions/Client"
-import { PlayerScoreType, ReducerActionType } from "../functions/GameReducer"
+import GameClass from "../functions/GameClass"
+import { PlayerScoreType, ReducerActionType, ReducerStateType } from "../functions/GameReducer"
 
 export type GameType = 'solo' | 'multi'
 
@@ -17,11 +18,16 @@ export interface InputContainerType {
 }
 
 export type CategoriesSelectState = {
-    rounds: number
     questionsPerRound: number
 }
 
 // Category & Questions
+export type Answers = 'a' | 'b' | 'c' | 'd'
+
+export type QuestionList = {
+    text: string
+    char: Answers
+}
 
 export type QuestionType = {
     question: string
@@ -31,7 +37,7 @@ export type QuestionType = {
     c: string
     d: string
 
-    correct: 'a' | 'b' | 'c' | 'd'
+    correct: Answers
 }
 
 export type CategoryInformations = {
@@ -57,13 +63,7 @@ export type GameLocation = CategoriesSelectState & {
 
 export type LoadingIndicatorType = {
     dispatch: React.Dispatch<ReducerActionType>
-    categoryName: string
-    categoryIcon: JSX.Element
-    round: number
-    question: number
-    qpr: number
-    totalRounds: number
-    players: PlayerScoreType[]
+    game: GameClass
 }
 
 export type CategoryInfoType = {
@@ -72,10 +72,8 @@ export type CategoryInfoType = {
 }
 
 export type GameInfoType = {
-    currentRound: number, 
     currentQuestion: number, 
-    totalRounds: number, 
-    questionsPerRound: number
+    totalQuestions: number
 }
 
 //////////
@@ -83,4 +81,10 @@ export type GameInfoType = {
 export type ScoresType = {
     players: PlayerScoreType[]
     totalQuestions: number
+}
+
+export type QuestionAnswersType = {
+    dispatch: React.Dispatch<ReducerActionType>
+    state: ReducerStateType
+    game: GameClass
 }

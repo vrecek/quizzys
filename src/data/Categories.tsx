@@ -5,6 +5,7 @@ import {BsCodeSlash} from 'react-icons/bs'
 import {FaLeaf} from 'react-icons/fa'
 import {AiFillYoutube} from 'react-icons/ai'
 import Client from "../functions/Client"
+import ProgrammingQuestions from "./ProgrammingQuestions"
 
 
 const Categories: CategoryInformations[] = [
@@ -18,8 +19,8 @@ const Categories: CategoryInformations[] = [
     {
         name: 'Programming',
         icon: <BsCodeSlash />,
-        total: 0,
-        questions: []
+        total: ProgrammingQuestions.length,
+        questions: ProgrammingQuestions
     },
 
     {
@@ -54,6 +55,10 @@ const Categories: CategoryInformations[] = [
 
 const returnOneCategory = (name: string): CategoryInformations => {
     const index: number = Categories.findIndex(x => x.name === name)
+    
+    Object.assign(Categories[index], {
+        questions: Client.shuffleArray(Categories[index].questions)
+    })
     
     return Categories[index]
 }

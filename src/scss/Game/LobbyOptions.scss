@@ -10,11 +10,7 @@ main.lobby-options {
         @include SetWidth(400, 40vw, 700);
 
         h1 {
-            font-size: 2.25rem;
-            opacity: .25;
-            font-weight: 800;
-            color: $clr-grey;
-            margin-bottom: 1em;
+            @include Header;
         }
 
         div.input-container {

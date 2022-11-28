@@ -115,4 +115,12 @@ $clr-red: rgb(199, 11, 11);
    height: 100vh;
 }
 
+@mixin Header($font: 2.25rem, $margBtm: 1em) {
+   font-size: $font;
+   opacity: .25;
+   font-weight: 800;
+   color: $clr-grey;
+   margin-bottom: $margBtm;
+}
+
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
