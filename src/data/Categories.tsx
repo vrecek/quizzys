@@ -1,12 +1,20 @@
-import { CategoryInformations, CategoryWithoutQuestions } from "../interfaces/mainInterfaces"
-import {IoLanguageOutline} from 'react-icons/io5'
+import { CategoryInformations, CategoryWithoutQuestions, QuestionType } from "../interfaces/mainInterfaces"
+import {IoLanguageOutline, IoLogoJavascript} from 'react-icons/io5'
 import {GiEarthAfricaEurope, GiGamepad} from 'react-icons/gi'
 import {BsCodeSlash} from 'react-icons/bs'
-import {FaLeaf} from 'react-icons/fa'
-import {AiFillYoutube} from 'react-icons/ai'
+import {AiOutlineWifi} from 'react-icons/ai'
 import Client from "../functions/Client"
-import ProgrammingQuestions from "./ProgrammingQuestions"
 
+import ProgrammingQuestions from "./Questions/ProgrammingQuestions.json"
+import JavascriptQuestions from './Questions/JavascriptQuestions.json'
+import GamesQuestions from './Questions/GamesQuestions.json'
+import InternetQuestions from './Questions/InternetQuestions.json'
+
+/*
+    join create DESIGN!!!
+    backend setup (prob)
+    options - username, high score, questions encountered (db or localstorage/cookie ???)
+*/
 
 const Categories: CategoryInformations[] = [
     {
@@ -20,7 +28,21 @@ const Categories: CategoryInformations[] = [
         name: 'Programming',
         icon: <BsCodeSlash />,
         total: ProgrammingQuestions.length,
-        questions: ProgrammingQuestions
+        questions: ProgrammingQuestions as QuestionType[]
+    },
+
+    {
+        name: 'JavaScript',
+        icon: <IoLogoJavascript />,
+        total: JavascriptQuestions.length,
+        questions: JavascriptQuestions as QuestionType[]
+    },
+
+    {
+        name: 'Internet',
+        icon: <AiOutlineWifi />,
+        total: InternetQuestions.length,
+        questions: InternetQuestions as QuestionType[]
     },
 
     {
@@ -31,24 +53,10 @@ const Categories: CategoryInformations[] = [
     },
 
     {
-        name: 'YouTube',
-        icon: <AiFillYoutube />,
-        total: 0,
-        questions: []
-    },
-
-    {
-        name: 'Ecology',
-        icon: <FaLeaf />,
-        total: 0,
-        questions: []
-    },
-
-    {
         name: 'Games',
         icon: <GiGamepad />,
-        total: 0,
-        questions: []
+        total: GamesQuestions.length,
+        questions: GamesQuestions as QuestionType[]
     }
 ]
 

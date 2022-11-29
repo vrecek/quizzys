@@ -5,12 +5,35 @@ section.game-section {
     @include Flex(sb, c, c);
     @include SetWidth(550, 50vw, 800);
     margin: 0 auto;
-    padding: 3em 0;
+    padding: 1.75em 0;
     
     h1 {
         font-weight: 800;
         font-size: 2rem;
         text-align: center;
+        width: 100%;
+
+        span {
+            font-size: 2rem;
+
+            &.font {
+                font-family: 'Roboto Slab', serif;
+                color: $clr-grey;
+                font-weight: 500;
+            }
+        }
+
+        figure {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            margin-top: 1em;
+            aspect-ratio: 2;
+         
+            img {
+                height: 100%;
+            }
+        }
     }
 
     ul {
@@ -19,7 +42,7 @@ section.game-section {
 
         li {
             width: 100%;
-            padding: 2em;
+            padding: 1.5em 2em;
             background: $clr-blued;
             border-radius: .15em;
             margin: .25em 0;
@@ -27,5 +50,7 @@ section.game-section {
             cursor: pointer;
             font-weight: 500;
         }
+ 
     }
 }
+

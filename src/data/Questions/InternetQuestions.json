@@ -1,0 +1,151 @@
+[
+    {
+        "question": "What internet protocol this address represents? [-s]2001:0db8:85a3:0000:0000:8a2e:0370:7334[s-]",
+        "a": "IPv4",
+        "b": "IPv5",
+        "c": "IPv6",
+        "d": "This is incorrect IP address",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "What [-s]HTTPS[s-] stands for?",
+        "a": "Hyper Transfer Protocol Secured",
+        "b": "Hypertext Transfer Protocol Secure",
+        "c": "Hypertext Tossing Protocols Secure",
+        "d": "Secure Hyper Transfer Protocol",
+
+        "correct": "b"
+    },
+
+    {
+        "question": "Who created first web page?",
+        "a": "Tim Berners-Lee",
+        "b": "Jon Postel",
+        "c": "Robert Cailliau",
+        "d": "Harry Nyquist",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "Without which language web page CANNOT exist?",
+        "a": "All answers are correct",
+        "b": "CSS",
+        "c": "JavaScript",
+        "d": "HTML",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "How many unique IP Adresses IPv4 has?",
+        "a": "2⁸",
+        "b": "2¹⁶",
+        "c": "2³²",
+        "d": "2⁶⁴",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "How are we able to see web pages?",
+        "a": "Because web server is sending us a HTML file",
+        "b": "Because of various Internet Protocol",
+        "c": "Because of Hypertext Transfer Protocol",
+        "d": "All above answers are correct",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "Which of these is a cryptographic protocol?",
+        "a": "TLS",
+        "b": "IETF",
+        "c": "CBC",
+        "d": "HTTPS",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "What do you mean by [-s]HTTP header[s-]?",
+        "a": "File format and data interchange format",
+        "b": "Software architectural style that describes a uniform interface",
+        "c": "Direct communication between devices using any communications channel",
+        "d": "Field of an HTTP request/response that passes additional context and metadata",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "How is called this marked part of the URL [[params.png]]?",
+        "a": "Query string",
+        "b": "Arguments",
+        "c": "URI",
+        "d": "Fragment",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "Select one of the markup languages",
+        "a": "XML",
+        "b": "COBOL",
+        "c": "JSON",
+        "d": "DMV",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "Which company does this logo represent? [[cern.png]]",
+        "a": "WWW",
+        "b": "Unicode",
+        "c": "CERN",
+        "d": ".NET",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "What is a default character encoding for HTML5?",
+        "a": "ASCII",
+        "b": "UTF-8",
+        "c": "UTF-16",
+        "d": "Unicode",
+
+        "correct": "b"
+    },
+
+    {
+        "question": "Who is on the picture below? [[tim.png]]",
+        "a": "Jim Clark",
+        "b": "Marc Andreessen",
+        "c": "Douglas Adams",
+        "d": "Tim Berners-Lee",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "What the DNS system was created for?",
+        "a": "Transmissing sequence of digitally encoded coherent signals to convey information",
+        "b": "Translating domain names to the numerical IP addresses",
+        "c": "Sending messages to other hosts on an Internet Protocol network",
+        "d": "Relaying datagrams across network boundaries",
+
+        "correct": "b"
+    },
+
+    {
+        "question": "What does [-s]Content-Type[s-] HTTP header mean?",
+        "a": "Defines the authentication method that should be used to access a resource",
+        "b": "Used to indicate the original media type of the resource",
+        "c": "Contains the credentials to authenticate a user agent to a proxy server",
+        "d": "Hints about how the connection may be used to set a maximum amount of requests",
+
+        "correct": "b"
+    }
+]

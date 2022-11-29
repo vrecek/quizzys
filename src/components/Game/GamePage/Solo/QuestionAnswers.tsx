@@ -3,11 +3,11 @@ import { NavigateFunction, useNavigate } from 'react-router-dom'
 import { ReducerEnum } from '../../../../functions/GameReducer'
 import { Answers, QuestionAnswersType, QuestionList } from '../../../../interfaces/mainInterfaces'
 
-const QuestionAnswers = ({game, dispatch, state}: QuestionAnswersType) => {
+const QuestionAnswers = ({game, dispatch}: QuestionAnswersType) => {
     const {a, b, c, d, correct} = game.getCategory.questions[game.getQuestion('current') - 1],
            n: NavigateFunction = useNavigate(),
            answersRef = React.useRef(null),
-           ANSWER_TIME: number = 8000,
+           ANSWER_TIME: number = 9000,
            questionList: QuestionList[] = [
                { text: a, char: 'a' },
                { text: b, char: 'b' },

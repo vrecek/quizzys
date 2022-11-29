@@ -17,19 +17,23 @@ const LobbyOptionsSolo = () => {
               elements: al.Input[] = Array.from(form.elements as al.Inputs),
               [questionsPerRound] = elements.map(x => parseInt(x.value))
 
+        const box = new Client.TextBox({
+            message: 'Please fill the fields correctly',
+            cname: 'error-lobby'
+        })
 
         if(!questionsPerRound || questionsPerRound > QUESTION_LIMIT) {
-            new Client.TextBox({
-                message: 'Please fill correctly the fields',
-                cname: 'error-lobby'
-
-            }).initializeBox()
+            box.initializeBox()
               .removePreviousBox(document.body)
               .appendTo(document.body, 2500)
 
             return
         }
 
+        if(box.isAppended(document.body))
+            box.removePreviousBox(document.body)
+
+            
         n('/solo/categories', {
             state: {
                 questionsPerRound

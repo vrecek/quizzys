@@ -85,6 +85,5 @@ export type ScoresType = {
 
 export type QuestionAnswersType = {
     dispatch: React.Dispatch<ReducerActionType>
-    state: ReducerStateType
     game: GameClass
 }

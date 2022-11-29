@@ -7,6 +7,7 @@ import SelectCategoriesSolo from './components/Game/SelectCategories/Solo/Select
 import GameSolo from './components/Game/GamePage/Solo/GameSolo';
 import LobbyOptionsSolo from './components/Game/LobbyOptions/Solo/LobbyOptionsSolo';
 import Summary from './components/Game/Summary/Summary';
+import CONTACT from './components/CONTACT/CONTACT';
 
 function App() {
     return (
@@ -27,6 +28,8 @@ function App() {
                     </Route>
 
                     <Route path='/summary' element={<Summary />} />
+
+                    <Route path='/contact' element={<CONTACT />} />
 
                 </Routes>
 

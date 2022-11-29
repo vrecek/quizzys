@@ -47,7 +47,6 @@ const GameSolo = () => {
                       />
 
                     : <GameSection 
-                           state={state}
                            dispatch={dispatch}
                            game={state.game}
                       />

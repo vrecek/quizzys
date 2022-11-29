@@ -1,0 +1,31 @@
+[
+    {
+        "question": "Declared is variable [-s]x = !!!true[s-]. What is the value?",
+        "a": "true",
+        "b": "Syntax error",
+        "c": "false",
+        "d": "Undefined",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "How can we create nested classes in TypeScript?",
+        "a": "In the parent's constructor",
+        "b": "Declare it as a regular variable",
+        "c": "Declare it as a static class",
+        "d": "This cannot be done",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "How are called these functions: [-s]function*[s-]?",
+        "a": "Generators",
+        "b": "Pointers",
+        "c": "Getters",
+        "d": "Instances",
+
+        "correct": "c"
+    }
+]

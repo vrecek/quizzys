@@ -11,7 +11,7 @@ const Options = () => {
             <Button action={() => n('/solo')} text='Play solo' />
             <Button text='Create lobby' />
             <Button text='Join lobby' />
-            <Button cname='about' text='About' />
+            <Button action={() => n('/contact')} cname='about' text='About' />
 
         </section>
     )

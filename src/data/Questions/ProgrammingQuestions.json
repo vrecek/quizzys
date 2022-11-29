@@ -1,0 +1,151 @@
+[
+    {
+        "question": "Which of these languages is not object oriented?",
+        "a": "C",
+        "b": "PHP",
+        "c": "Rust",
+        "d": "Go",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "Who created C++ language ?",
+        "a": "Bjarne Stroustrup",
+        "b": "Brendan Eich",
+        "c": "Graydon Hoare",
+        "d": "Microsoft",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "Which of these languages is supported natively in the browsers?",
+        "a": "Python",
+        "b": "TypeScript",
+        "c": "WASM",
+        "d": "None of these",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "What program translates source code into lower level target language?",
+        "a": "Interpreter",
+        "b": "Compiler",
+        "c": "Transpiler",
+        "d": "Optimizer",
+
+        "correct": "b"
+    },
+
+    {
+        "question": "What does 'garbage collector' mean in programming?",
+        "a": "Dynamic dead-code elimination",
+        "b": "Compressing virtual memory",
+        "c": "Collecting details about errors",
+        "d": "Reclaiming allocated memory which is no longer referenced",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "In which of these languages array indexing starts from 1?",
+        "a": "SQL",
+        "b": "Rust",
+        "c": "Kotlin",
+        "d": "LUA",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "What is the value of i? [[dowhile.png]]",
+        "a": "0",
+        "b": "Undefined",
+        "c": "2",
+        "d": "There will be infinite loop",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "Which language does have operator overloading?",
+        "a": "PHP",
+        "b": "Python",
+        "c": "All of above",
+        "d": "None of these",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "What language is this? [[java1.png]]",
+        "a": "Kotlin",
+        "b": "Java",
+        "c": "Fortran",
+        "d": "TypeScript",
+
+        "correct": "b"
+    },
+
+    {
+        "question": "Convert [-s]10000[s-] in binary to a decimal system",
+        "a": "8",
+        "b": "5",
+        "c": "16",
+        "d": "24",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "What does it mean if String is immutable?",
+        "a": "It cannot be modified",
+        "b": "It can be modified",
+        "c": "It does not exist anymore",
+        "d": "Variable cannot be overwritten",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "What is the main benefit of the object oriented programming?",
+        "a": "Polymorphism",
+        "b": "Performance",
+        "c": "Maintainability",
+        "d": "Simplicity",
+
+        "correct": "a"
+    },
+
+    {
+        "question": "What job is 'fullstack' developer doing in terms of web development?",
+        "a": "Creating servers",
+        "b": "Designing websites",
+        "c": "Taking care of frontend and backend",
+        "d": "Managing databases",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "Which language is used for creating website's backend?",
+        "a": "PHP",
+        "b": "Python",
+        "c": "Javascript",
+        "d": "All answers are correct",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "What is mechanism on the image below called? [[cppfor.png]]",
+        "a": "Callback",
+        "b": "While loop",
+        "c": "If statement",
+        "d": "For loop",
+
+        "correct": "d"
+    }
+]
