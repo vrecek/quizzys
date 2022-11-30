@@ -9,9 +9,9 @@ const Options = () => {
         <section className="options">
 
             <Button action={() => n('/solo')} text='Play solo' />
-            <Button text='Create lobby' />
-            <Button text='Join lobby' />
-            <Button action={() => n('/contact')} cname='about' text='About' />
+            <Button cname='disable' text='Create lobby' />
+            <Button cname='disable' text='Join lobby' />
+            <Button action={() => n('/contact')} text='About' />
 
         </section>
     )

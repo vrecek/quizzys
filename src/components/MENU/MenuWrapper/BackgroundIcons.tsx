@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../Common/Icon'
+import Icon from '../../Common/Icon'
 import {MdOutlineQuiz} from 'react-icons/md'
 
 const BackgroundIcons = () => {

@@ -78,14 +78,13 @@ main.main-menu {
                     letter-spacing: 1px;
                 }
 
-                &:not(.about):hover {
+                &:hover {
                     background: royalblue;
                 }
 
-                &.about {
+                &.disable {
                     background: $clr-red;
-
-                    &:hover { background: crimson; }
+                    pointer-events: none;
                 }
             }
         }

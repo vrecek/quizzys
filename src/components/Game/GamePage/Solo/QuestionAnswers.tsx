@@ -1,20 +1,17 @@
 import React from 'react'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
+import Cookies from '../../../../functions/CookieClass'
 import { ReducerEnum } from '../../../../functions/GameReducer'
-import { Answers, QuestionAnswersType, QuestionList } from '../../../../interfaces/mainInterfaces'
+import { Answers, QuestionAnswersType } from '../../../../interfaces/mainInterfaces'
 
 const QuestionAnswers = ({game, dispatch}: QuestionAnswersType) => {
     const {a, b, c, d, correct} = game.getCategory.questions[game.getQuestion('current') - 1],
-           n: NavigateFunction = useNavigate(),
-           answersRef = React.useRef(null),
-           ANSWER_TIME: number = 9000,
-           questionList: QuestionList[] = [
-               { text: a, char: 'a' },
-               { text: b, char: 'b' },
-               { text: c, char: 'c' },
-               { text: d, char: 'd' }
-           ]
-           
+          categoryName: string = game.getCategory.name,
+          totalQuestions: number = game.getQuestion('total'),
+          n: NavigateFunction = useNavigate(),
+          answersRef = React.useRef(null),
+          ANSWER_TIME: number = 9000
+
 
     const timeout: NodeJS.Timer = setTimeout(() => {
         game.incorrectOptionHandler(correct, answersRef.current!)
@@ -39,14 +36,21 @@ const QuestionAnswers = ({game, dispatch}: QuestionAnswersType) => {
 
 
     const lastQuestionHandle = (): boolean => {
-        if(game.getQuestion('current') !== game.getQuestion('total')) return false
+        if(game.getQuestion('current') !== totalQuestions) return false
+
+        if(Cookies.isAllowed()) {
+            Cookies.setTotalGames( Cookies.getTotalGames() + 1 )
+            Cookies.setTotalQuestions( Cookies.getTotalQuestions() + totalQuestions )
+            Cookies.setTCorrectQuestions( Cookies.getTCorrectQuestions() + game.getPlayers[0].points )
+            Cookies.calculateFavouriteCategory( categoryName, totalQuestions )
+        }
 
         n('/summary', {
             replace: true,
             state: {
                 players: game.getPlayers,
-                category: game.getCategory.name,
-                totalQuestions: game.getQuestion('total')
+                category: categoryName,
+                totalQuestions: totalQuestions
             }
         })
 
@@ -78,10 +82,17 @@ const QuestionAnswers = ({game, dispatch}: QuestionAnswersType) => {
         <ul ref={answersRef}>
 
             {
-                questionList.map((x, i) => (
+                [
+                    { text: a, char: 'a' as Answers },
+                    { text: b, char: 'b' as Answers },
+                    { text: c, char: 'c' as Answers },
+                    { text: d, char: 'd' as Answers }
+                ].map((x, i) => (
+
                     <li onClick={(e) => selectAnswer(e, x.char)} key={i}>
                         {x.text}
                     </li>
+
                 ))
             }
 

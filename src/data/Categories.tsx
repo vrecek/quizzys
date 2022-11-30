@@ -13,7 +13,6 @@ import InternetQuestions from './Questions/InternetQuestions.json'
 /*
     join create DESIGN!!!
     backend setup (prob)
-    options - username, high score, questions encountered (db or localstorage/cookie ???)
 */
 
 const Categories: CategoryInformations[] = [

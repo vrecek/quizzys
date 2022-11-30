@@ -2,14 +2,12 @@ import React from 'react'
 import HeaderText from './HeaderText'
 import Options from './Options/Options'
 import '../../css/MENU.css'
-import SourceRedirect from './SourceRedirect'
-import BackgroundIcons from './BackgroundIcons'
+import MenuWrapper from './MenuWrapper/MenuWrapper'
+import Profile from './Profile/Profile'
 
 const MENU = () => {
     return (
-        <main className="main-menu">
-
-            <SourceRedirect />
+        <MenuWrapper>
 
             <div className="wrap">
 
@@ -19,9 +17,9 @@ const MENU = () => {
 
             </div>
 
-            <BackgroundIcons />
+            <Profile />
 
-        </main>
+        </MenuWrapper>
     )
 }
 

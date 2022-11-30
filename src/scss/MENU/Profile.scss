@@ -1,0 +1,102 @@
+@import '../config';
+
+span.toggle-profile {
+    @include Rectangle(35px);
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    @include Flex(c, c);
+    cursor: pointer;
+}
+
+section.profile-menu {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: .2em;
+    width: 50vw;
+    background: #1a1c20;
+    padding: 1em;
+    height: 80vh;
+
+    span.close-icon {
+        @include Rectangle(30px);
+        cursor: pointer;
+        color: crimson;
+        margin: 0 0 0 auto;
+        margin-bottom: .5em;
+    }
+
+    p.header {
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-weight: 700;
+        font-family: 'Roboto Slab', serif;
+        letter-spacing: 1px;
+        margin-bottom: .75em;
+    }
+
+    section.user-informations {
+        margin-top: 3em;
+
+        div.kvd {
+            width: 100%;
+            display: flex;
+            background: rgba(80, 80, 80, .25);
+            border-radius: .5em;
+
+            p {
+                width: 50%;
+                padding: 1.25em .75em;
+                font-size: .85rem;
+
+                &.key {
+                    font-weight: 500;
+                    font-family: 'Roboto Slab', serif;
+                }
+
+                &.value {
+                    color: $clr-grey;
+                    font-weight: 500;
+                    text-align: right;
+                }
+            }
+
+            &.bottom { margin-bottom: 1em; border-radius: 0 0 .5em .5em; }
+            &.top { margin-top: 1em; border-radius: .5em .5em 0 0; }
+        }
+    }
+
+    section.allow-cookies {
+        div.text {
+            margin-bottom: .5em;
+            
+            p {
+                font-size: .8rem;
+                color: $clr-grey;
+
+                &.warn {
+                    color: red;
+                }
+            }
+        }
+
+        span.confirm-box {
+            @include FullSize;
+            @include Rectangle(35px);
+            @include Flex(c, c);
+            background: #303030;
+            border: 2px solid grey;
+            border-radius: .25em;
+            cursor: pointer;
+    
+            svg {
+                @include FullSize(80%)
+            }
+    
+            &.false { color: red; }
+            &.true { color: greenyellow; }
+        }
+    }
+}
