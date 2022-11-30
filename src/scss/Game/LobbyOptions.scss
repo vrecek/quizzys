@@ -7,10 +7,10 @@ main.lobby-options {
     form.wrap {
         background: #1b1d22;
         padding: 2em;
-        @include SetWidth(400, 40vw, 700);
+        @include SetWidth(440, 40vw, 700);
 
         h1 {
-            @include Header;
+            @include Header(clamp(1.75rem, 10vw, 2.25rem));
         }
 
         div.input-container {
@@ -54,6 +54,12 @@ main.lobby-options {
             }
 
             &:hover { background: royalblue; }
+        }
+
+        @media (max-width: 480px) {
+            @include ResetWidth;
+            width: 95%;
+            padding: 2em 1em;
         }
     }
 }

@@ -3,13 +3,14 @@
 main.summary {
     @include Flex(none, c, c);
     min-height: 100vh;
-    padding: 3em;
+    padding: 3em clamp(.5em, 6vw, 3em);
 
     div.text {
         margin-bottom: 5em;
 
         h1 {
             @include Header(2.25rem, 0);
+            text-align: center;
         }
 
         h2 {
@@ -28,6 +29,18 @@ main.summary {
         li {
             padding: 1em 3em;
             @include Flex(sb, c);
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 3em .25em;
+
+        div.text {
+            h1 { margin-bottom: .2em; }
+        }
+
+        ul {
+            li { padding: 1em; }
         }
     }
 }

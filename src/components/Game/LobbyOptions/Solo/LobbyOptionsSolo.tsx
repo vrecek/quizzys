@@ -7,7 +7,7 @@ import Client, { Aliases as al } from '../../../../functions/Client'
 
 const LobbyOptionsSolo = () => {
     const n: NavigateFunction = useNavigate(),
-          QUESTION_LIMIT: number = 10
+          QUESTION_LIMIT: number = 15
 
 
     const submitHandle = (e: React.FormEvent): void => {

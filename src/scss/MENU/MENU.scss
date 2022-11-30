@@ -47,7 +47,7 @@ main.main-menu {
             h1.title {
                 font-weight: 800;
                 letter-spacing: -1px;
-                font-size: 4rem;
+                @include Clamp(3.25, 10, 4);
                 font-family: 'Roboto Slab', serif;
             }
 
@@ -58,7 +58,7 @@ main.main-menu {
         }
 
         section.options {
-            @include SetWidth(225, 30vw, 400);
+            @include SetWidth(250, 30vw, 450);
 
             button {
                 display: block;
@@ -67,6 +67,8 @@ main.main-menu {
                 @include NotMargin(1);
                 background: $clr-blued;
                 border-radius: .2em;
+                z-index: 2;
+                position: relative;
                 outline: 0;
                 border: 0;
                 transition: .3s;
@@ -76,6 +78,7 @@ main.main-menu {
                     color: $clr-white;
                     font-weight: 500;
                     letter-spacing: 1px;
+                    @include Clamp(.9, 4, 1);
                 }
 
                 &:hover {

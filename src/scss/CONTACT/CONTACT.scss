@@ -2,7 +2,7 @@
 
 main.contact {
     @include Flex(c, c, c);
-    padding: 2em;
+    padding: 2em clamp(.5em, 5vw, 2em);
 
     span.background-icon {
         @include Absolute(50%, 50%);
@@ -16,7 +16,8 @@ main.contact {
     }
 
     h1 {
-        @include Header(2.75rem, 1.5em);
+        @include Header(clamp(2rem, 8vw, 2.75rem), 1.5em);
+        text-align: center;
     }
 
     div.container {
@@ -25,7 +26,7 @@ main.contact {
         width: 100%;
 
         section {
-            width: 40%;
+            @include SetWidth(450, 40%, 800);
             display: flex;
             flex-direction: column;
 
@@ -51,9 +52,11 @@ main.contact {
                         border-left: 2px solid $clr-blued;
                         padding: .75em 0 .75em 1em;
                         @include Flex(none, c);
+                        @include Clamp(.85, 4, 1);
 
                         span {
                             margin-left: .5em;
+                            @include Clamp(.85, 4, 1);
 
                             &.name,
                             &.mail {
@@ -110,6 +113,7 @@ main.contact {
                         padding: .25em 0;
                         color: $clr-grey;
                         font-weight: 300;
+                        @include Clamp(.9, 4, 1);
 
                         &::before {
                             content: counter(item);
@@ -118,6 +122,42 @@ main.contact {
                             margin-right: .75em;
                             color: $clr-grey;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        div.container {
+            flex-direction: column;
+            
+            section {
+                @include ResetWidth;
+                width: 100%;
+
+                &.contact {
+                    margin-top: 3em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 2em .25em;
+
+        div.container {
+            section {
+                article {
+                    padding: .5em;
+                }
+
+                &.contact {
+                    p { 
+                        &.author { 
+                            border: 0; 
+                            padding: .75em 0;
+                        } 
                     }
                 }
             }

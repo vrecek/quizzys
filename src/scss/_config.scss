@@ -35,6 +35,11 @@ $clr-red: rgb(199, 11, 11);
    max-width: #{$maxPX}px;
 }
 
+@mixin ResetWidth {
+   min-width: auto;
+   max-width: none;
+}
+
 @mixin NotMargin($marginBottomEM: 0, $marginTopEM: 0, $notWho: last-child) {
    &:not(:#{$notWho}) {
       margin-bottom: #{$marginBottomEM}em;

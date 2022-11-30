@@ -80,16 +80,6 @@
     },
 
     {
-        "question": "How is called this marked part of the URL [[params.png]]?",
-        "a": "Query string",
-        "b": "Arguments",
-        "c": "URI",
-        "d": "Fragment",
-
-        "correct": "a"
-    },
-
-    {
         "question": "Select one of the markup languages",
         "a": "XML",
         "b": "COBOL",
@@ -100,16 +90,6 @@
     },
 
     {
-        "question": "Which company does this logo represent? [[cern.png]]",
-        "a": "WWW",
-        "b": "Unicode",
-        "c": "CERN",
-        "d": ".NET",
-
-        "correct": "c"
-    },
-
-    {
         "question": "What is a default character encoding for HTML5?",
         "a": "ASCII",
         "b": "UTF-8",
@@ -117,16 +97,6 @@
         "d": "Unicode",
 
         "correct": "b"
-    },
-
-    {
-        "question": "Who is on the picture below? [[tim.png]]",
-        "a": "Jim Clark",
-        "b": "Marc Andreessen",
-        "c": "Douglas Adams",
-        "d": "Tim Berners-Lee",
-
-        "correct": "d"
     },
 
     {
@@ -147,5 +117,35 @@
         "d": "Hints about how the connection may be used to set a maximum amount of requests",
 
         "correct": "b"
+    },
+
+    {
+        "question": "Which company does this logo represent? [[cern.png]]",
+        "a": "WWW",
+        "b": "Unicode",
+        "c": "CERN",
+        "d": ".NET",
+
+        "correct": "c"
+    },
+
+    {
+        "question": "Who is on the picture below? [[tim.png]]",
+        "a": "Jim Clark",
+        "b": "Marc Andreessen",
+        "c": "Douglas Adams",
+        "d": "Tim Berners-Lee",
+
+        "correct": "d"
+    },
+
+    {
+        "question": "How is called this marked part of the URL? [[params.png]]",
+        "a": "Query string",
+        "b": "Arguments",
+        "c": "URI",
+        "d": "Fragment",
+
+        "correct": "a"
     }
 ]

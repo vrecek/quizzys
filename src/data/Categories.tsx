@@ -10,10 +10,6 @@ import JavascriptQuestions from './Questions/JavascriptQuestions.json'
 import GamesQuestions from './Questions/GamesQuestions.json'
 import InternetQuestions from './Questions/InternetQuestions.json'
 
-/*
-    join create DESIGN!!!
-    backend setup (prob)
-*/
 
 const Categories: CategoryInformations[] = [
     {

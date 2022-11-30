@@ -2,13 +2,13 @@
 
 main.select-categories {
     @include Flex(none, c, c);
-    padding: 2em;
+    padding: 2em clamp(.5em, 3vw, 2em);
 
     div.wrap {
         width: 100%;
 
         h1 {
-            @include Header(2.5rem);
+            @include Header(clamp(1.75rem, 8vw, 2.5rem));
         }
 
         section.category-select {
@@ -17,7 +17,7 @@ main.select-categories {
             flex-wrap: wrap;
 
             article.category {
-                @include SetWidth(225, 18%, 400);
+                @include SetWidth(200, 18%, 400);
                 flex-wrap: nowrap;
                 margin: 0 .5em;
                 padding: 1.5em 1em;
@@ -36,6 +36,7 @@ main.select-categories {
                         font-weight: 700;
                         font-family: 'Roboto Slab', serif;
                         margin: .25em 0 1em 0;
+                        @include Clamp(.9, 4, 1);
                     }
 
                     &.total {
@@ -47,7 +48,7 @@ main.select-categories {
 
                 span {
                     pointer-events: none;
-                    @include Rectangle(3rem);
+                    @include Rectangle(clamp(2rem, 15vw, 3rem));
                 }
 
                 &.active {
@@ -73,6 +74,26 @@ main.select-categories {
             }
 
             &:hover { background: royalblue; }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 2em .25em;
+
+        div.wrap {
+            h1 {
+                text-align: center;
+            }
+
+            section.category-select {
+                article.category {
+                    @include ResetWidth;
+                    width: 46%;
+                    margin: 0 .25em;
+                    padding: .5em;
+                    margin-bottom: .75em;
+                }
+            }
         }
     }
 }

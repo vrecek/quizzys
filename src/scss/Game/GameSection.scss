@@ -1,16 +1,16 @@
 @import '../config';
 
 section.game-section {
-    height: 100vh;
+    min-height: 100vh;
     @include Flex(sb, c, c);
-    @include SetWidth(550, 50vw, 800);
+    @include SetWidth(480, 50vw, 800);
     margin: 0 auto;
     padding: 1.75em 0;
     
     h1 {
         font-weight: 800;
-        font-size: 2rem;
         text-align: center;
+        @include Clamp(1.25, 5, 2);
         width: 100%;
 
         span {
@@ -29,6 +29,8 @@ section.game-section {
             margin: 0 auto;
             margin-top: 1em;
             aspect-ratio: 2;
+            overflow: hidden;
+            @include Flex(c, c);
          
             img {
                 height: 100%;
@@ -42,15 +44,29 @@ section.game-section {
 
         li {
             width: 100%;
-            padding: 1.5em 2em;
+            padding: clamp(1em, 5vw, 1.5em) 2em;
             background: $clr-blued;
             border-radius: .15em;
             margin: .25em 0;
             text-align: center;
             cursor: pointer;
             font-weight: 500;
+            @include Clamp(.9, 5, 1);
         }
  
+    }
+
+    @media (max-width: 480px) {
+        @include ResetWidth;
+        width: 100%;
+
+        ul {
+            width: 95%;
+        }
+
+        h1 {
+            figure { width: 100%; }
+        }
     }
 }
 

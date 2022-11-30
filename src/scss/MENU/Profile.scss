@@ -15,10 +15,11 @@ section.profile-menu {
     top: 50%;
     translate: -50% -50%;
     border-radius: .2em;
-    width: 50vw;
+    @include SetWidth(460, 50vw, 1000);
     background: #1a1c20;
     padding: 1em;
-    height: 80vh;
+    padding-bottom: 3em;
+    z-index: 5;
 
     span.close-icon {
         @include Rectangle(30px);
@@ -50,6 +51,7 @@ section.profile-menu {
                 width: 50%;
                 padding: 1.25em .75em;
                 font-size: .85rem;
+                @include Flex(none, c);
 
                 &.key {
                     font-weight: 500;
@@ -59,7 +61,7 @@ section.profile-menu {
                 &.value {
                     color: $clr-grey;
                     font-weight: 500;
-                    text-align: right;
+                    @include Flex(fe, c);
                 }
             }
 
@@ -78,6 +80,7 @@ section.profile-menu {
 
                 &.warn {
                     color: red;
+                    margin: .25em 0;
                 }
             }
         }
@@ -98,5 +101,11 @@ section.profile-menu {
             &.false { color: red; }
             &.true { color: greenyellow; }
         }
+    }
+
+    @media (max-width: 480px) {
+        @include ResetWidth;
+        width: 100%;
+        height: 100vh;
     }
 }

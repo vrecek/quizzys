@@ -22,8 +22,8 @@ main.game-page {
                 }
     
                 h1 {
-                    font-size: 2.5rem;
                     text-align: center;
+                    @include Clamp(1.6, 8, 2.5);
                     font-weight: 800;
                 }
             }
@@ -70,8 +70,23 @@ main.game-page {
             }
 
             li {
-                padding: 1.25em;
+                padding: 1.25em 0;
                 @include Flex(sa, c);
+
+                p {
+                    @include Clamp(.9, 4, 1);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        section.loading-indicator {
+            div.fullheight {
+                ul.game-info {
+                    @include ResetWidth;
+                    width: 95%;
+                }
             }
         }
     }
