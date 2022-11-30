@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_quiz=self.webpackChunkreact_quiz||[]).push([[674],{674:function(e,t,a){e.exports=a.p+"static/media/tim.eec6a27556238af0293f.png"}}]);
