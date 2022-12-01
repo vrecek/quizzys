@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_quiz=self.webpackChunkreact_quiz||[]).push([[258],{258:function(e,a,c){e.exports=c.p+"static/media/params.5b2ca7ef39edd2724f2c.png"}}]);
