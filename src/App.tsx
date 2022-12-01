@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/index.css'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {HashRouter, Route, Routes} from 'react-router-dom'
 import MENU from './components/MENU/MENU';
 import HomeIcon from './components/HomeIcon';
 import SelectCategoriesSolo from './components/Game/SelectCategories/Solo/SelectCategoriesSolo';
@@ -13,7 +13,7 @@ function App() {
     return (
         <div className="App">
 
-            <Router>
+            <HashRouter>
 
                 <Routes>
 
@@ -35,7 +35,7 @@ function App() {
 
                 <HomeIcon />
 
-            </Router>
+            </HashRouter>
 
         </div>
     )
