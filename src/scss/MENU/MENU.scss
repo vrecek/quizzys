@@ -2,6 +2,7 @@
 
 main.main-menu {
     @include Fullscreen;
+    overflow: hidden;
     @include Flex(c, c, c);
     padding: 2em;   
 
@@ -17,22 +18,30 @@ main.main-menu {
         &:hover { color: $clr-bluel; }
     }
 
-    span.bg-ic {
+    div.bg-icons {
         position: absolute;
-        @include Rectangle(5rem);
-        opacity: .1;
+        left: 0;
+        top: 0;
+        @include Fullscreen;
+        overflow: hidden;
 
-        $lefts: (
-            15%, 82%, 15%, 82%, 15%, 82%
-        );
-        $bottoms: (
-            50%, 50%, 15%, 15%, 82%, 82% 
-        );
-
-        @for $i from 1 through 6 {
-            &.n#{$i} {
-                left: nth($lefts, $i);
-                bottom: nth($bottoms, $i);
+        span.bg-ic {
+            @include Rectangle(5rem);
+            opacity: .1;
+            position: absolute;
+    
+            $lefts: (
+                15%, 82%, 15%, 82%, 15%, 82%
+            );
+            $bottoms: (
+                50%, 50%, 15%, 15%, 82%, 82% 
+            );
+    
+            @for $i from 1 through 6 {
+                &.n#{$i} {
+                    left: nth($lefts, $i);
+                    bottom: nth($bottoms, $i);
+                }
             }
         }
     }

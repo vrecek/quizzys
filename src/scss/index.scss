@@ -14,7 +14,12 @@ font-family: 'Roboto Slab', serif;
     font-size: 22px;
 }
 
-div.App { overflow: hidden; }
+div#root,
+div.App {
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100vw;
+}
 
 body {
     background: #282c34;
@@ -61,7 +66,3 @@ body {
         background: orangered;
     }
 }
-
-// @media (max-width: 768px) {
-//     div.App { overflow-x: hidden; }
-// }

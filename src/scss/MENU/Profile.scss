@@ -7,6 +7,7 @@ span.toggle-profile {
     bottom: 10px;
     @include Flex(c, c);
     cursor: pointer;
+    z-index: 99;
 }
 
 section.profile-menu {
