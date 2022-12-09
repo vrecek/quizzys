@@ -4,7 +4,7 @@ import {BiHome} from 'react-icons/bi'
 
 const HomeIcon = () => {
     return (
-        <Icon cname='home-icon' action={() => window.location.href = '/'}>
+        <Icon cname='home-icon' action={() => window.location.href = '/quizzys'}>
 
             <BiHome />
 
